@@ -1,0 +1,19 @@
+{
+  "name": "hospital-management-system",
+  "version": "1.0.0",
+  "description": "Enterprise Full-Stack Hospital Management System (HMS)",
+  "main": "frontend/src/main.tsx",
+  "scripts": {
+    "start": "npm --prefix frontend run dev",
+    "dev": "npm --prefix frontend run dev",
+    "build": "npm --prefix frontend run build",
+    "build:mobile": "npm --prefix mobile run build",
+    "test": "npm --prefix frontend test",
+    "install:all": "npm --prefix frontend install && npm --prefix mobile install",
+    "docker:up": "docker compose up --build -d",
+    "docker:down": "docker compose down"
+  },
+  "keywords": ["hospital", "healthcare", "ehr", "emr", "hl7", "fhir", "telemedicine", "react", "spring-boot"],
+  "author": "Apex Healthcare Engineering",
+  "license": "MIT"
+}
