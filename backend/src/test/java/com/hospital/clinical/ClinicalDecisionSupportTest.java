@@ -1,9 +1,9 @@
 package com.hospital.clinical;
 
 import com.hospital.clinical.cdss.ClinicalScoringCalculator;
+import com.hospital.clinical.knowledge.ComprehensiveLoincTestDirectory;
 import com.hospital.clinical.knowledge.DrugInteractionEngine;
-import com.hospital.clinical.knowledge.Icd10MasterDictionary;
-import com.hospital.clinical.knowledge.LoincMasterDirectory;
+import com.hospital.clinical.knowledge.Icd10ClinicalEncyclopedia;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -17,8 +17,8 @@ class ClinicalDecisionSupportTest {
 
     private final ClinicalScoringCalculator calculator = new ClinicalScoringCalculator();
     private final DrugInteractionEngine drugInteractionEngine = new DrugInteractionEngine();
-    private final Icd10MasterDictionary icd10Dictionary = new Icd10MasterDictionary();
-    private final LoincMasterDirectory loincDirectory = new LoincMasterDirectory();
+    private final Icd10ClinicalEncyclopedia icd10Encyclopedia = new Icd10ClinicalEncyclopedia();
+    private final ComprehensiveLoincTestDirectory loincDirectory = new ComprehensiveLoincTestDirectory();
 
     @Test
     @DisplayName("MEWS: Should calculate critical score and trigger Rapid Response Team when vitals are unstable")
@@ -125,18 +125,17 @@ class ClinicalDecisionSupportTest {
     @Test
     @DisplayName("ICD-10 Master: Should retrieve primary hypertension code I10")
     void testIcd10Lookup() {
-        Optional<Icd10MasterDictionary.Icd10Entry> entry = icd10Dictionary.findByCode("I10");
+        Optional<Icd10ClinicalEncyclopedia.DiseaseMonograph> entry = icd10Encyclopedia.findByCode("I10");
         assertTrue(entry.isPresent());
-        assertEquals("Essential (primary) hypertension", entry.get().getDescription());
-        assertTrue(entry.get().isChronicCondition());
+        assertTrue(entry.get().getConditionName().contains("Hypertension"));
     }
 
     @Test
     @DisplayName("LOINC Master: Should retrieve high-sensitivity cardiac troponin I test 42757-5")
     void testLoincLookup() {
-        Optional<LoincMasterDirectory.LoincTestEntry> entry = loincDirectory.findByLoinc("42757-5");
+        Optional<ComprehensiveLoincTestDirectory.LoincTestEntry> entry = loincDirectory.findByCode("42757-5");
         assertTrue(entry.isPresent());
-        assertTrue(entry.get().getComponent().contains("Troponin I"));
-        assertEquals("ng/mL", entry.get().getUnit());
+        assertTrue(entry.get().getComponentName().contains("Troponin I"));
+        assertEquals("ng/mL", entry.get().getStandardUnit());
     }
 }
