@@ -22,7 +22,7 @@ export const AnesthesiologyPacuWorkstation: React.FC = () => {
           </div>
           <div>
             <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Anesthesiology & PACU Recovery Flowsheet</h1>
-            <p className="text-sm text-gray-500">ASA Physical Status, Mallampati Airway Grade & Modified Aldrete Discharge Score (Target >= 9/10)</p>
+            <p className="text-sm text-gray-500">ASA Physical Status, Mallampati Airway Grade & Modified Aldrete Discharge Score (Target &gt;= 9/10)</p>
           </div>
         </div>
         <span className={`px-3 py-1.5 rounded-full text-xs font-semibold ${isDischargeReady ? 'bg-emerald-600 text-white' : 'bg-amber-500 text-white'}`}>
