@@ -10,7 +10,7 @@ export const Usp800HazardousDrugPpeAdvisor: React.FC = () => {
             <Pill className="w-8 h-8" />
           </div>
           <div>
-            <h1 className="text-2xl font-bold text-gray-900 dark:text-white">USP <800> Hazardous Drug PPE & Containment Advisor</h1>
+            <h1 className="text-2xl font-bold text-gray-900 dark:text-white">USP &lt;800&gt; Hazardous Drug PPE &amp; Containment Advisor</h1>
             <p className="text-sm text-gray-500">NIOSH chemotherapy handling guidelines, CSTD requirements and spill protocols</p>
           </div>
         </div>
