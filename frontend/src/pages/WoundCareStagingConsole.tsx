@@ -25,7 +25,7 @@ export const WoundCareStagingConsole: React.FC = () => {
       lengthCm: 3.5,
       widthCm: 2.8,
       depthCm: 0.6,
-      tunnelingClock: '2 cm at 11 o'clock',
+      tunnelingClock: "2 cm at 11 o'clock",
       exudateType: 'Serosanguinous',
       exudateAmount: 'Moderate',
       tissueBase: '70% Granulation, 30% Slough',
