@@ -19,9 +19,9 @@ export const CinvAntiemeticConsole: React.FC = () => {
       <div className="p-4 bg-slate-950 rounded-xl border border-slate-800 my-6 space-y-3">
         <label className="text-xs text-slate-400 block mb-1">Chemotherapy Emetogenic Risk Category</label>
         <select value={emetogenicity} onChange={e => setEmetogenicity(e.target.value)} className="w-full bg-slate-900 border border-slate-700 rounded px-2.5 py-1.5 text-xs text-slate-200">
-          <option>High Emetic Risk (HEC > 90% - Cisplatin, AC)</option>
-          <option>Moderate Emetic Risk (MEC 30-90% - Carboplatin, Oxaliplatin)</option>
-          <option>Low Emetic Risk (10-30% - Paclitaxel, Docetaxel)</option>
+          <option value="HEC">High Emetic Risk (HEC &gt; 90% - Cisplatin, AC)</option>
+          <option value="MEC">Moderate Emetic Risk (MEC 30-90% - Carboplatin, Oxaliplatin)</option>
+          <option value="LOW">Low Emetic Risk (10-30% - Paclitaxel, Docetaxel)</option>
         </select>
 
         <div className="mt-4 p-3 bg-slate-900 rounded border border-slate-800 text-xs font-mono space-y-1 text-slate-300">
