@@ -28,3 +28,5 @@ scratch/
 *.zip
 pgdata/
 redisdata/
+frontend/tsconfig.tsbuildinfo
+*.tsbuildinfo
